@@ -24,6 +24,25 @@
           <Property Name="MessageSubject" Type="nvarchar" MaxLength="100" />
           <Property Name="Content" Type="nvarchar" MaxLength="1000" />
         </EntityType>
+        <EntityType Name="TblProject">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectTitle" Type="nvarchar" MaxLength="100" />
+          <Property Name="ProjectDescription" Type="nvarchar" MaxLength="500" />
+          <Property Name="ProjectImageUrl" Type="nvarchar" MaxLength="1000" />
+          <Property Name="ProjectLink" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="TblReference">
+          <Key>
+            <PropertyRef Name="ReferenceID" />
+          </Key>
+          <Property Name="ReferenceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameSurname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Hometown" Type="nvarchar" MaxLength="50" />
+          <Property Name="Thoughts" Type="nvarchar" MaxLength="500" />
+        </EntityType>
         <EntityType Name="TblService">
           <Key>
             <PropertyRef Name="ServiceID" />
@@ -37,6 +56,8 @@
         <EntityContainer Name="CasgemPortfolioModelStoreContainer">
           <EntitySet Name="TblFeature" EntityType="Self.TblFeature" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblMessage" EntityType="Self.TblMessage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblProject" EntityType="Self.TblProject" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblReference" EntityType="Self.TblReference" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblService" EntityType="Self.TblService" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -66,6 +87,8 @@
           <EntitySet Name="TblFeatures" EntityType="Self.TblFeature" />
           <EntitySet Name="TblServices" EntityType="Self.TblService" />
           <EntitySet Name="TblMessages" EntityType="CasgemPortfolioModel.TblMessage" />
+          <EntitySet Name="TblReferences" EntityType="CasgemPortfolioModel.TblReference" />
+          <EntitySet Name="TblProjects" EntityType="CasgemPortfolioModel.TblProject" />
         </EntityContainer>
         <EntityType Name="TblMessage">
           <Key>
@@ -76,6 +99,25 @@
           <Property Name="SenderMail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="MessageSubject" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Content" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblReference">
+          <Key>
+            <PropertyRef Name="ReferenceID" />
+          </Key>
+          <Property Name="ReferenceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Hometown" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Thoughts" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblProject">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectImageUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectLink" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -112,6 +154,27 @@
                 <ScalarProperty Name="SenderMail" ColumnName="SenderMail" />
                 <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
                 <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblReferences">
+            <EntityTypeMapping TypeName="CasgemPortfolioModel.TblReference">
+              <MappingFragment StoreEntitySet="TblReference">
+                <ScalarProperty Name="Thoughts" ColumnName="Thoughts" />
+                <ScalarProperty Name="Hometown" ColumnName="Hometown" />
+                <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
+                <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblProjects">
+            <EntityTypeMapping TypeName="CasgemPortfolioModel.TblProject">
+              <MappingFragment StoreEntitySet="TblProject">
+                <ScalarProperty Name="ProjectLink" ColumnName="ProjectLink" />
+                <ScalarProperty Name="ProjectImageUrl" ColumnName="ProjectImageUrl" />
+                <ScalarProperty Name="ProjectDescription" ColumnName="ProjectDescription" />
+                <ScalarProperty Name="ProjectTitle" ColumnName="ProjectTitle" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
