@@ -56,6 +56,7 @@ namespace Casgem_Portfolio.Controllers
             value.NameSurname = tblReference.NameSurname;
             value.Hometown = tblReference.Hometown;
             value.Thoughts = tblReference.Thoughts;
+            value.ImageLink = tblReference.ImageLink;
             db.SaveChanges();
 
             return RedirectToAction("Index");

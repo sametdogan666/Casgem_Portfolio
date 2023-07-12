@@ -15,6 +15,25 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <EntityType Name="TblAbout">
+          <Key>
+            <PropertyRef Name="AboutID" />
+          </Key>
+          <Property Name="AboutID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AboutTitle" Type="nvarchar" MaxLength="100" />
+          <Property Name="AboutShort" Type="nvarchar" MaxLength="500" />
+          <Property Name="CvLink" Type="nvarchar" MaxLength="1000" />
+          <Property Name="AboutImage" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="TblContact">
+          <Key>
+            <PropertyRef Name="ContactID" />
+          </Key>
+          <Property Name="ContactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="15" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Location" Type="nvarchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="TblDepartment">
           <Key>
             <PropertyRef Name="DepartmentID" />
@@ -33,11 +52,6 @@
           <Property Name="EmployeeSalary" Type="decimal" Precision="18" Scale="2" />
           <Property Name="EmployeeDepartment" Type="int" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'CasgemPortfolio.dbo.TblEmployeeCount' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TblEmployeeCount">
-          <Property Name="StaffCount" Type="int" />
-        </EntityType>-->
         <EntityType Name="TblFeature">
           <Key>
             <PropertyRef Name="FeatureID" />
@@ -75,6 +89,7 @@ warning 6013: The table/view 'CasgemPortfolio.dbo.TblEmployeeCount' does not hav
           <Property Name="NameSurname" Type="nvarchar" MaxLength="50" />
           <Property Name="Hometown" Type="nvarchar" MaxLength="50" />
           <Property Name="Thoughts" Type="nvarchar" MaxLength="500" />
+          <Property Name="ImageLink" Type="nvarchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="TblResume">
           <Key>
@@ -116,6 +131,8 @@ warning 6013: The table/view 'CasgemPortfolio.dbo.TblEmployeeCount' does not hav
         </Association>
         <EntityContainer Name="CasgemPortfolioModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblAbout" EntityType="Self.TblAbout" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblContact" EntityType="Self.TblContact" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblDepartment" EntityType="Self.TblDepartment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblEmployee" EntityType="Self.TblEmployee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblFeature" EntityType="Self.TblFeature" Schema="dbo" store:Type="Tables" />
@@ -168,6 +185,8 @@ warning 6013: The table/view 'CasgemPortfolio.dbo.TblEmployeeCount' does not hav
             <End Role="TblDepartment" EntitySet="TblDepartments" />
             <End Role="TblEmployee" EntitySet="TblEmployees" />
           </AssociationSet>
+          <EntitySet Name="TblAbouts" EntityType="CasgemPortfolioModel.TblAbout" />
+          <EntitySet Name="TblContacts" EntityType="CasgemPortfolioModel.TblContact" />
         </EntityContainer>
         <EntityType Name="TblMessage">
           <Key>
@@ -187,6 +206,7 @@ warning 6013: The table/view 'CasgemPortfolio.dbo.TblEmployeeCount' does not hav
           <Property Name="NameSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Hometown" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Thoughts" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ImageLink" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="TblProject">
           <Key>
@@ -256,6 +276,25 @@ warning 6013: The table/view 'CasgemPortfolio.dbo.TblEmployeeCount' does not hav
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="TblAbout">
+          <Key>
+            <PropertyRef Name="AboutID" />
+          </Key>
+          <Property Name="AboutID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AboutTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CvLink" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="AboutShort" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="AboutImage" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblContact">
+          <Key>
+            <PropertyRef Name="ContactID" />
+          </Key>
+          <Property Name="ContactID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Location" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -297,6 +336,7 @@ warning 6013: The table/view 'CasgemPortfolio.dbo.TblEmployeeCount' does not hav
           <EntitySetMapping Name="TblReferences">
             <EntityTypeMapping TypeName="CasgemPortfolioModel.TblReference">
               <MappingFragment StoreEntitySet="TblReference">
+                <ScalarProperty Name="ImageLink" ColumnName="ImageLink" />
                 <ScalarProperty Name="Thoughts" ColumnName="Thoughts" />
                 <ScalarProperty Name="Hometown" ColumnName="Hometown" />
                 <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
@@ -361,6 +401,27 @@ warning 6013: The table/view 'CasgemPortfolio.dbo.TblEmployeeCount' does not hav
                 <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
                 <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
                 <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblAbouts">
+            <EntityTypeMapping TypeName="CasgemPortfolioModel.TblAbout">
+              <MappingFragment StoreEntitySet="TblAbout">
+                <ScalarProperty Name="AboutImage" ColumnName="AboutImage" />
+                <ScalarProperty Name="AboutShort" ColumnName="AboutShort" />
+                <ScalarProperty Name="CvLink" ColumnName="CvLink" />
+                <ScalarProperty Name="AboutTitle" ColumnName="AboutTitle" />
+                <ScalarProperty Name="AboutID" ColumnName="AboutID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblContacts">
+            <EntityTypeMapping TypeName="CasgemPortfolioModel.TblContact">
+              <MappingFragment StoreEntitySet="TblContact">
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="ContactID" ColumnName="ContactID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

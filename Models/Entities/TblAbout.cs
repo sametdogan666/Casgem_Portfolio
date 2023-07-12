@@ -12,12 +12,12 @@ namespace Casgem_Portfolio.Models.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class TblReference
+    public partial class TblAbout
     {
-        public int ReferenceID { get; set; }
-        public string NameSurname { get; set; }
-        public string Hometown { get; set; }
-        public string Thoughts { get; set; }
-        public string ImageLink { get; set; }
+        public int AboutID { get; set; }
+        public string AboutTitle { get; set; }
+        public string CvLink { get; set; }
+        public string AboutShort { get; set; }
+        public string AboutImage { get; set; }
     }
 }

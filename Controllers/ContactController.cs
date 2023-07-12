@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Web.Mvc;
 using Casgem_Portfolio.Models.Entities;
 
 namespace Casgem_Portfolio.Controllers
@@ -10,6 +11,10 @@ namespace Casgem_Portfolio.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            ViewBag.phoneNumber = _db.TblContacts.Select(x => x.PhoneNumber).FirstOrDefault();
+            ViewBag.email = _db.TblContacts.Select(x => x.Email).FirstOrDefault();
+            ViewBag.location = _db.TblContacts.Select(x => x.Location).FirstOrDefault();
+
             return View();
         }
 

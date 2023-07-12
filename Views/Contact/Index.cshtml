@@ -1,4 +1,5 @@
-﻿
+﻿@model Casgem_Portfolio.Models.Entities.TblContact
+
 @{
     Layout = null;
 }
@@ -41,8 +42,8 @@ Author URL: http://w3layouts.com
                                 <span class="fa fa-phone text-primary"></span>
                             </div>
                             <div class="cont-right">
-                                <h6>Call Me</h6>
-                                <p><a href="tel:+44 99 555 42">+123 45 67 89</a></p>
+                                <h6>Telefon</h6>
+                                <p>+@ViewBag.phoneNumber</p>
                             </div>
                         </div>
                         <div class="cont-top margin-up">
@@ -50,8 +51,8 @@ Author URL: http://w3layouts.com
                                 <span class="fa fa-envelope-o text-primary"></span>
                             </div>
                             <div class="cont-right">
-                                <h6>Email Me</h6>
-                                <p><a href="mailto:example@mail.com" class="mail">example@mail.com</a></p>
+                                <h6>Email</h6>
+                                <p><a href="mailto:@ViewBag.email" class="mail">@ViewBag.email</a></p>
                             </div>
                         </div>
                         <div class="cont-top margin-up">
@@ -59,8 +60,8 @@ Author URL: http://w3layouts.com
                                 <span class="fa fa-map-marker text-primary"></span>
                             </div>
                             <div class="cont-right">
-                                <h6>Location</h6>
-                                <p>Address here, 208 Trainer Avenue street, Illinois, UK - 62617.</p>
+                                <h6>Adres</h6>
+                                <p>@ViewBag.location</p>
                             </div>
                         </div>
                     </div>

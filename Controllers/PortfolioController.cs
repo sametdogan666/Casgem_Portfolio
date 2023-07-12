@@ -28,13 +28,18 @@ namespace Casgem_Portfolio.Controllers
         {
             ViewBag.featureTitle = _db.TblFeatures.Select(x => x.FeatureTitle).FirstOrDefault();
             ViewBag.featureDescription = _db.TblFeatures.Select(x => x.FeatureDescription).FirstOrDefault();
-            ViewBag.featureImage = _db.TblFeatures.Select(x=>x.FeatureImageURL).FirstOrDefault();
+            ViewBag.featureImage = _db.TblFeatures.Select(x => x.FeatureImageURL).FirstOrDefault();
 
             return PartialView();
         }
 
         public PartialViewResult PartialAbout()
         {
+            ViewBag.aboutTitle = _db.TblAbouts.Select(x => x.AboutTitle).FirstOrDefault();
+            ViewBag.aboutShort = _db.TblAbouts.Select(x => x.AboutShort).FirstOrDefault();
+            ViewBag.CvLink = _db.TblAbouts.Select(x => x.CvLink).FirstOrDefault();
+            ViewBag.aboutImage = _db.TblAbouts.Select(x => x.AboutImage).FirstOrDefault();
+
             return PartialView();
         }
 
@@ -45,9 +50,11 @@ namespace Casgem_Portfolio.Controllers
             return PartialView(values);
         }
 
-        public PartialViewResult PartialProject()
+        public PartialViewResult PartialService()
         {
-            return PartialView();
+            var values = _db.TblServices.ToList();
+
+            return PartialView(values);
         }
 
         public PartialViewResult PartialStatistics()
@@ -66,7 +73,9 @@ namespace Casgem_Portfolio.Controllers
 
         public PartialViewResult PartialReference()
         {
-            return PartialView();
+            var values = _db.TblReferences.ToList();
+
+            return PartialView(values);
         }
     }
 }

@@ -126,6 +126,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AdminContactController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\FeatureController.cs" />
@@ -156,6 +158,12 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities\sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\TblAbout.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\TblContact.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities\TblDepartment.cs">
@@ -438,9 +446,14 @@
     <Content Include="Templates\Report-Login-Free\fonts\fontawesome-webfont.woff" />
     <Content Include="Templates\Report-Login-Free\fonts\fontawesome-webfont.woff2" />
     <Content Include="Templates\Report-Login-Free\fonts\FontAwesome.otf" />
-    <Content Include="Views\Portfolio\PartialProject.cshtml" />
     <Content Include="Views\Portfolio\PartialReference.cshtml" />
     <Content Include="Views\Statistic\Index.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\About\UpdateAbout.cshtml" />
+    <Content Include="Templates\abdussamet_dogan_cv.pdf" />
+    <Content Include="Views\Portfolio\PartialService.cshtml" />
+    <Content Include="Views\AdminContact\Index.cshtml" />
+    <Content Include="Views\AdminContact\UpdateContact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
