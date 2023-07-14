@@ -18,5 +18,8 @@ namespace Casgem_Portfolio.Models.Entities
         public string FeatureTitle { get; set; }
         public string FeatureDescription { get; set; }
         public string FeatureImageURL { get; set; }
+        public string FeatureSkill1 { get; set; }
+        public string FeatureSkill2 { get; set; }
+        public string FeatureSkill3 { get; set; }
     }
 }

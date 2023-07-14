@@ -1,13 +1,9 @@
-﻿@model Casgem_Portfolio.Models.Entities.TblContact
+﻿@model Casgem_Portfolio.Models.Entities.TblMessage
 
 @{
     Layout = null;
 }
 
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
--->
 <!doctype html>
 <html lang="en">
 
@@ -89,10 +85,32 @@ Author URL: http://w3layouts.com
         </div>
     </section>
     <!-- /contact1 -->
-    <div class="map-iframe">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48971.55583359708!2d32.71898894863281!3d39.902850699999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d3461d6e60c379%3A0x317d27897e932d3b!2s%C3%87ankaya%20Universitesi%20Mimarl%C4%B1k%20Fak%C3%BCltesi!5e0!3m2!1sen!2str!4v1689066377871!5m2!1sen!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<div class="map-iframe">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48971.55583359708!2d32.71898894863281!3d39.902850699999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d3461d6e60c379%3A0x317d27897e932d3b!2s%C3%87ankaya%20Universitesi%20Mimarl%C4%B1k%20Fak%C3%BCltesi!5e0!3m2!1sen!2str!4v1689066377871!5m2!1sen!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                        
+                       
+            </div>
+            <div class="modal-body text-center">
+                <div class="text-center">
+                    <img src="~/Templates/tik.png" class="img-thumbnail" />
+                </div>
+                        
+                <h3>Mesaj Gönderme Başarılı </h3>
+            </div>
+            <div class="modal-footer">
+                       
+            </div>
+        </div>
     </div>
-    <!-- //contact block -->
+</div>
+<!-- //contact block -->
     <!-- Footer -->
     @Html.Action("PartialFooter", "Portfolio")
     <!-- //Footer -->

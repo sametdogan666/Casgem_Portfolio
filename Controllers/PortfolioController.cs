@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using System.Web.UI.WebControls.WebParts;
 using Casgem_Portfolio.Models.Entities;
@@ -76,6 +77,16 @@ namespace Casgem_Portfolio.Controllers
             var values = _db.TblReferences.ToList();
 
             return PartialView(values);
+        }
+
+        public PartialViewResult PartialScripts()
+        {
+            List<TblFeature> about = new List<TblFeature>();
+            about = _db.TblFeatures.ToList();
+            ViewBag.D1 = about.Select(x => x.FeatureSkill1).FirstOrDefault();
+            ViewBag.D2 = about.Select(x => x.FeatureSkill2).FirstOrDefault();
+            ViewBag.D3 = about.Select(x => x.FeatureSkill3).FirstOrDefault();
+            return PartialView();
         }
     }
 }

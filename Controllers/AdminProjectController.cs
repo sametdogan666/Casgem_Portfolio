@@ -7,7 +7,7 @@ using Casgem_Portfolio.Models.Entities;
 
 namespace Casgem_Portfolio.Controllers
 {
-    public class ProjectController : Controller
+    public class AdminProjectController : Controller
     {
         CasgemPortfolioEntities1 db = new CasgemPortfolioEntities1();
 

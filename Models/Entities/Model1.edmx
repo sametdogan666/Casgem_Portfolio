@@ -60,6 +60,9 @@
           <Property Name="FeatureTitle" Type="nvarchar" MaxLength="100" />
           <Property Name="FeatureDescription" Type="nvarchar" MaxLength="1000" />
           <Property Name="FeatureImageURL" Type="nvarchar" MaxLength="1000" />
+          <Property Name="FeatureSkill1" Type="nvarchar" MaxLength="50" />
+          <Property Name="FeatureSkill2" Type="nvarchar" MaxLength="50" />
+          <Property Name="FeatureSkill3" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="TblMessage">
           <Key>
@@ -159,6 +162,9 @@
           <Property Name="FeatureTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="FeatureDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Name="FeatureImageURL" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="FeatureSkill1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FeatureSkill2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FeatureSkill3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="TblService">
           <Key>
@@ -304,6 +310,9 @@
           <EntitySetMapping Name="TblFeatures">
             <EntityTypeMapping TypeName="CasgemPortfolioModel.TblFeature">
               <MappingFragment StoreEntitySet="TblFeature">
+                <ScalarProperty Name="FeatureSkill3" ColumnName="FeatureSkill3" />
+                <ScalarProperty Name="FeatureSkill2" ColumnName="FeatureSkill2" />
+                <ScalarProperty Name="FeatureSkill1" ColumnName="FeatureSkill1" />
                 <ScalarProperty Name="FeatureID" ColumnName="FeatureID" />
                 <ScalarProperty Name="FeatureTitle" ColumnName="FeatureTitle" />
                 <ScalarProperty Name="FeatureDescription" ColumnName="FeatureDescription" />

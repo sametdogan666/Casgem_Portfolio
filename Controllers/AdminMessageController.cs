@@ -7,7 +7,7 @@ using Casgem_Portfolio.Models.Entities;
 
 namespace Casgem_Portfolio.Controllers
 {
-    public class MessageController : Controller
+    public class AdminMessageController : Controller
     {
         CasgemPortfolioEntities1 db = new CasgemPortfolioEntities1();
         public ActionResult Index()

@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Threading;
 using System.Web.Mvc;
 using Casgem_Portfolio.Models.Entities;
 
@@ -21,10 +22,18 @@ namespace Casgem_Portfolio.Controllers
         [HttpPost]
         public ActionResult Index(TblMessage tblMessage)
         {
-            _db.TblMessages.Add(tblMessage);
-            _db.SaveChanges();
+            
+            if (ModelState.IsValid)
+            {
+                _db.TblMessages.Add(tblMessage);
+                _db.SaveChanges();
+                Thread.Sleep(500);
 
-            return RedirectToAction("Index", "Portfolio");
+                return RedirectToAction("Index", "Portfolio");
+                // return Json(new { success = true });
+            }
+
+            return View(tblMessage);
         }
     }
 }
