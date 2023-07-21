@@ -7,6 +7,7 @@ using Casgem_Portfolio.Models.Entities;
 
 namespace Casgem_Portfolio.Controllers
 {
+    [Authorize]
     public class AdminProjectController : Controller
     {
         CasgemPortfolioEntities1 db = new CasgemPortfolioEntities1();
@@ -55,7 +56,6 @@ namespace Casgem_Portfolio.Controllers
             var value = db.TblProjects.Find(tblProject.ProjectID);
             value.ProjectTitle = tblProject.ProjectTitle;
             value.ProjectDescription = tblProject.ProjectDescription;
-            value.ProjectImageUrl = tblProject.ProjectImageUrl;
             value.ProjectLink = tblProject.ProjectLink;
             db.SaveChanges();
 

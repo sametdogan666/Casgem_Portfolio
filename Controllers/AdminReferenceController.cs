@@ -7,6 +7,7 @@ using Casgem_Portfolio.Models.Entities;
 
 namespace Casgem_Portfolio.Controllers
 {
+    [Authorize]
     public class AdminReferenceController : Controller
     {
         CasgemPortfolioEntities1 db = new CasgemPortfolioEntities1();

@@ -14,18 +14,26 @@
         <th>Hakkımda İçerik</th>
         <th>Cv Linki</th>
         <th>Güncelle</th>
+        <th>Sil</th>
     </tr>
-  @foreach(var item in Model){
+    @foreach (var item in Model)
+    {
         <tr>
             <td></td>
             <td>@item.AboutID</td>
             <td>@item.AboutTitle</td>
             <td>@item.AboutShort</td>
             <td>@item.CvLink</td>
-            <td><a href="/About/UpdateAbout/@item.AboutID" class="btn btn-outline-success">Güncelle</a></td>
+            <td><a href="/AdminAbout/UpdateAbout/@item.AboutID" class="btn btn-outline-success">Güncelle</a></td>
+            <td><a href="/AdminAbout/DeleteAbout/@item.AboutID" class="btn btn-outline-danger">Sil</a></td>
         </tr>
-  }
+    }
 </table>
+@if (ViewBag.countFeature == 0)
+{
+    <a href="/AdminAbout/AddAbout" class="btn btn-outline-primary">Yeni Hakkımda İçeriği Ekle</a>
+}
+
 
 
 

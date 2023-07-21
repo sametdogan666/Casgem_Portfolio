@@ -4,6 +4,7 @@ using Casgem_Portfolio.Models.Entities;
 
 namespace Casgem_Portfolio.Controllers
 {
+    [Authorize]
     public class AdminStatisticController : Controller
     {
         private readonly CasgemPortfolioEntities1 _db = new CasgemPortfolioEntities1();

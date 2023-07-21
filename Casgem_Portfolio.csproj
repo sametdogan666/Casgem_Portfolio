@@ -128,9 +128,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminAboutController.cs" />
+    <Compile Include="Controllers\AdminAboutPageAboutController.cs" />
     <Compile Include="Controllers\AdminContactController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
-    <Compile Include="Controllers\FeatureController.cs" />
+    <Compile Include="Controllers\AdminFeatureController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\AdminMessageController.cs" />
     <Compile Include="Controllers\PortfolioController.cs" />
@@ -162,6 +163,21 @@
     <Compile Include="Models\Entities\TblAbout.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Entities\TblAboutDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\TblAboutDetailSecond.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\TblAchievement.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\TblAchievementDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\TblAdmin.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Entities\TblContact.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -190,6 +206,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities\TblSkill.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\TblVideoPopUp.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -257,6 +276,7 @@
     <Content Include="Templates\alexander-starter\assets\images\myphoto.jpg" />
     <Content Include="Templates\alexander-starter\assets\images\myphoto1.jpg" />
     <Content Include="Templates\alexander-starter\assets\images\photo.png" />
+    <Content Include="Templates\alexander-starter\assets\images\profile.jpg" />
     <Content Include="Templates\alexander-starter\assets\images\team1.jpg" />
     <Content Include="Templates\alexander-starter\assets\images\team2.jpg" />
     <Content Include="Templates\alexander-starter\assets\images\team3.jpg" />
@@ -410,12 +430,11 @@
     <Content Include="Templates\alexander-starter\assets\fonts\fontawesome-webfont.woff2" />
     <Content Include="Templates\alexander-starter\assets\fonts\FontAwesome.otf" />
     <Content Include="Views\Shared\_PortfolioAdminLayout.cshtml" />
-    <Content Include="Views\Feature\Index.cshtml" />
+    <Content Include="Views\AdminFeature\Index.cshtml" />
     <Content Include="Views\AdminService\Index.cshtml" />
     <Content Include="Views\AdminService\AddService.cshtml" />
     <Content Include="Views\AdminService\UpdateService.cshtml" />
     <Content Include="Views\AdminMessage\Index.cshtml" />
-    <Content Include="Views\AdminMessage\MessageDetails.cshtml" />
     <Content Include="Views\AdminReference\Index.cshtml" />
     <Content Include="Views\AdminReference\AddReference.cshtml" />
     <Content Include="Views\AdminReference\UpdateReference.cshtml" />
@@ -448,6 +467,20 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Portfolio\PartialScripts.cshtml" />
+    <Content Include="Views\Portfolio\PartialVideoPopUp.cshtml" />
+    <Content Include="Views\Portfolio\PartialHireMe.cshtml" />
+    <Content Include="Views\About\PartialAbout.cshtml" />
+    <Content Include="Views\About\PartialAchievement.cshtml" />
+    <Content Include="Views\About\PartialAchievementShort.cshtml" />
+    <Content Include="Views\About\PartialAboutSecond.cshtml" />
+    <Content Include="Views\Portfolio\PartialProject.cshtml" />
+    <Content Include="Views\AdminFeature\AddFeature.cshtml" />
+    <Content Include="Views\AdminFeature\UpdateFeature.cshtml" />
+    <Content Include="Views\AdminContact\AddContact.cshtml" />
+    <Content Include="Views\AdminAbout\AddAbout.cshtml" />
+    <Content Include="Views\AdminAboutPageAbout\Index.cshtml" />
+    <Content Include="Views\AdminAboutPageAbout\AddAbout.cshtml" />
+    <Content Include="Views\AdminAboutPageAbout\UpdateAbout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "AddAbout";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Yeni Hakkımda Yazısı Ekleme Sayfası</h2>
+
+<form method="post">
+    <label>Hakkımda Başlığı</label>
+    <input type="text" class="form-control" name="AboutTitle" />
+    <br />
+    <label>Hakkımda Açıklaması</label>
+    <input type="text" class="form-control" name="AboutShort" />
+    <br />
+    <label>CV Linki</label>
+    <input type="text" class="form-control" name="CvLink" />
+    <br />
+    <label>Fotoğraf Yolu</label>
+    <input type="text" class="form-control" name="AboutImage" />
+    <br />
+    <br />
+    <button class="btn btn-info">Öne Hakkıma Yazısı Ekle</button>
+</form>
+
+

@@ -7,6 +7,7 @@ using Casgem_Portfolio.Models.Entities;
 
 namespace Casgem_Portfolio.Controllers
 {
+    [Authorize]
     public class AdminMessageController : Controller
     {
         CasgemPortfolioEntities1 db = new CasgemPortfolioEntities1();
@@ -26,10 +27,5 @@ namespace Casgem_Portfolio.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult MessageDetails(int id)
-        {
-            var value = db.TblMessages.Find(id);
-            return View(value);
-        }
     }
 }

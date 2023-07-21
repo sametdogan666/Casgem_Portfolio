@@ -1,0 +1,71 @@
+﻿@model List<Casgem_Portfolio.Models.Entities.TblAchievementDetail>
+
+<section class="w3l-services">
+    <div class="w3l-achievements py-5" id="services">
+      @foreach(var item in Model){
+            <div class="container py-lg-5">
+                <h5 class="title-small text-center">@item.SmallTitle</h5>
+                <h3 class="title-big text-center mb-sm-5 mb-4">@item.Title</h3>
+                <div class="row">
+                    <div class="col-lg-6 item">
+                        <div class="card">
+                            <div class="box-wrap">
+                                <div class="icon">
+                                    <span class="fa fa-laptop"></span>
+                                </div>
+                                <h4>@item.Skill1Title</h4>
+                                <p>
+                                    @item.Skill1Description
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 item">
+                        <div class="card">
+                            <div class="box-wrap">
+                                <div class="icon">
+                                    <span class="fa fa-laptop"></span>
+                                </div>
+                                <h4>@item.Skill2Title</h4>
+                                <p>
+                                    @item.Skill2Description
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 item">
+                        <div class="card">
+                            <div class="box-wrap mb-lg-0">
+                                <div class="icon">
+                                    <span class="fa fa-laptop"></span>
+                                </div>
+                                <h4><a href="#url">@item.Skill3Title</a></h4>
+                                <p>
+                                    @item.Skill3Description
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 item">
+                        <div class="card">
+                            <div class="box-wrap mb-0">
+                                <div class="icon">
+                                    <span class="fa fa-laptop"></span>
+                                </div>
+                                <h4>@item.Skill4Title</h4>
+                                <p>
+                                   @item.Skill4Description
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+      }
+    </div>
+</section>
+

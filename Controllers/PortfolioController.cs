@@ -6,6 +6,7 @@ using Casgem_Portfolio.Models.Entities;
 
 namespace Casgem_Portfolio.Controllers
 {
+    [AllowAnonymous]
     public class PortfolioController : Controller
     {
         private readonly CasgemPortfolioEntities1 _db = new CasgemPortfolioEntities1();
@@ -47,6 +48,7 @@ namespace Casgem_Portfolio.Controllers
         public PartialViewResult PartialMyResume()
         {
             var values = _db.TblResumes.ToList();
+            ViewBag.aboutImage = _db.TblAbouts.Select(x => x.AboutImage).FirstOrDefault();
 
             return PartialView(values);
         }
@@ -54,6 +56,13 @@ namespace Casgem_Portfolio.Controllers
         public PartialViewResult PartialService()
         {
             var values = _db.TblServices.ToList();
+
+            return PartialView(values);
+        }
+
+        public PartialViewResult PartialProject()
+        {
+            var values = _db.TblProjects.ToList();
 
             return PartialView(values);
         }
@@ -67,11 +76,6 @@ namespace Casgem_Portfolio.Controllers
             return PartialView();
         }
 
-        public PartialViewResult PartialFooter()
-        {
-            return PartialView();
-        }
-
         public PartialViewResult PartialReference()
         {
             var values = _db.TblReferences.ToList();
@@ -79,6 +83,26 @@ namespace Casgem_Portfolio.Controllers
             return PartialView(values);
         }
 
+        public PartialViewResult PartialVideoPopUp()
+        {
+            ViewBag.title = _db.TblVideoPopUps.Select(x => x.Title).FirstOrDefault();
+            ViewBag.description = _db.TblVideoPopUps.Select(x => x.Description).FirstOrDefault();
+            ViewBag.videoLink = _db.TblVideoPopUps.Select(x => x.VideoUrl).FirstOrDefault();
+            ViewBag.videoImageLink = _db.TblVideoPopUps.Select(x => x.VideoImageUrl).FirstOrDefault();
+
+            return PartialView();
+        }
+
+        public PartialViewResult PartialHireMe()
+        {
+            return PartialView();
+        }
+
+        public PartialViewResult PartialFooter()
+        {
+            return PartialView();
+        }
+       
         public PartialViewResult PartialScripts()
         {
             List<TblFeature> about = new List<TblFeature>();

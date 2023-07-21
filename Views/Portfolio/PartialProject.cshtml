@@ -1,25 +1,28 @@
-﻿@model List<Casgem_Portfolio.Models.Entities.TblService>
-
+﻿@model List<Casgem_Portfolio.Models.Entities.TblProject>
+@{int count = 0;}
 <section class="w3l-services">
     <div class="blog py-5" id="services">
         <div class="container py-lg-5">
-            <h5 class="title-small text-center">Servisler</h5>
+            <h5 class="title-small text-center">Projeler</h5>
             <h3 class="title-big text-center mb-sm-5 mb-4">Neler Yapıyorum</h3>
             <div class="row">
                 <div class="col-md-12 mx-auto pr-2">
                     <div class="owl-two owl-carousel owl-theme">
-                        @foreach (var item in Model){
+                        @foreach (var item in Model)
+                        {
+                            count++;
                             <div class="item">
                                 <div class="card">
                                     <div class="box-wrap">
                                         <div class="icon">
-                                            <span class="@item.ServiceIcon"></span>
+                                            <span class="fa fa-laptop"></span>
                                         </div>
-                                        <h4 class="number">@item.ServiceNumber</h4>
-                                        <h4><a href="#url">@item.ServiceTitle</a></h4>
+                                        <h4 class="number">@count</h4>
+                                        <h4><a href="#url">@item.ProjectTitle</a></h4>
                                         <p>
-                                            @item.ServiceContent
+                                            @item.ProjectDescription
                                         </p>
+                                        <a href="@item.ProjectLink" class="read" target="_blank">Projeye Git</a>
                                     </div>
                                 </div>
                             </div>
@@ -30,3 +33,4 @@
         </div>
     </div>
 </section>
+

@@ -12,11 +12,14 @@ namespace Casgem_Portfolio.Models.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class TblProject
+    public partial class TblAchievement
     {
-        public int ProjectID { get; set; }
-        public string ProjectTitle { get; set; }
-        public string ProjectDescription { get; set; }
-        public string ProjectLink { get; set; }
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public string Achievement1 { get; set; }
+        public string Achievement2 { get; set; }
+        public string Achievement3 { get; set; }
+        public string Achievement4 { get; set; }
     }
 }

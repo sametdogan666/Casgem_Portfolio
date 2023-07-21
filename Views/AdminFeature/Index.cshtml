@@ -1,0 +1,42 @@
+﻿@model List<Casgem_Portfolio.Models.Entities.TblFeature>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+    int count = 0;
+}
+
+<h2>Öne Çıkan Sayfası</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+        <th>Proje Linki</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>@item.FeatureTitle</td>
+            <td>@item.FeatureDescription</td>
+            <td>@item.FeatureSkill1</td>
+            <td>@item.FeatureSkill2</td>
+            <td>@item.FeatureSkill3</td>
+            <td>@item.FeatureImageURL</td>
+            <td><a href="/AdminFeature/DeleteFeature/@item.FeatureID" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/AdminFeature/UpdateFeature/@item.FeatureID" class="btn btn-outline-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+@if (ViewBag.countFeature == 0)
+{
+    <a href="/AdminFeature/AddFeature" class="btn btn-outline-primary">Yeni Öne Çıkan İçerik Ekle</a>
+}
+
+
+

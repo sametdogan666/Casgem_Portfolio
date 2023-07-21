@@ -25,6 +25,75 @@
           <Property Name="CvLink" Type="nvarchar" MaxLength="1000" />
           <Property Name="AboutImage" Type="nvarchar" MaxLength="1000" />
         </EntityType>
+        <EntityType Name="TblAboutDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SmallTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Age" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImageUrl" Type="nvarchar" MaxLength="500" />
+          <Property Name="GithubUrl" Type="nvarchar" MaxLength="500" />
+          <Property Name="InstagramUrl" Type="nvarchar" MaxLength="500" />
+          <Property Name="LinkedinUrl" Type="nvarchar" MaxLength="500" />
+          <Property Name="CvUrl" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TblAboutDetailSecond">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SmallTitle" Type="nvarchar" MaxLength="100" />
+          <Property Name="Title" Type="nvarchar" MaxLength="500" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Skill1Title" Type="nvarchar" MaxLength="100" />
+          <Property Name="Skill1Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="Skill2Title" Type="nvarchar" MaxLength="100" />
+          <Property Name="Skill2Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="Skill3Title" Type="nvarchar" MaxLength="100" />
+          <Property Name="Skill3Description" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TblAchievement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="Achievement1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Achievement2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Achievement3" Type="nvarchar" MaxLength="50" />
+          <Property Name="Achievement4" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TblAchievementDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SmallTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" />
+          <Property Name="Skill1Title" Type="nvarchar" MaxLength="100" />
+          <Property Name="Skill1Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="Skill2Title" Type="nvarchar" MaxLength="100" />
+          <Property Name="Skill2Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="Skill3Title" Type="nvarchar" MaxLength="100" />
+          <Property Name="Skill3Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="Skill4Title" Type="nvarchar" MaxLength="100" />
+          <Property Name="Skill4Description" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TblAdmin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="TblContact">
           <Key>
             <PropertyRef Name="ContactID" />
@@ -81,7 +150,6 @@
           <Property Name="ProjectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ProjectTitle" Type="nvarchar" MaxLength="100" />
           <Property Name="ProjectDescription" Type="nvarchar" MaxLength="500" />
-          <Property Name="ProjectImageUrl" Type="nvarchar" MaxLength="1000" />
           <Property Name="ProjectLink" Type="nvarchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="TblReference">
@@ -120,6 +188,16 @@
           <Property Name="SkillID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SkillName" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="TblVideoPopUp">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="VideoUrl" Type="nvarchar" MaxLength="500" />
+          <Property Name="VideoImageUrl" Type="nvarchar" MaxLength="500" />
+        </EntityType>
         <Association Name="FK_TblEmployee_TblDepartment">
           <End Role="TblDepartment" Type="Self.TblDepartment" Multiplicity="0..1" />
           <End Role="TblEmployee" Type="Self.TblEmployee" Multiplicity="*" />
@@ -135,6 +213,11 @@
         <EntityContainer Name="CasgemPortfolioModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblAbout" EntityType="Self.TblAbout" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblAboutDetail" EntityType="Self.TblAboutDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblAboutDetailSecond" EntityType="Self.TblAboutDetailSecond" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblAchievement" EntityType="Self.TblAchievement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblAchievementDetail" EntityType="Self.TblAchievementDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblAdmin" EntityType="Self.TblAdmin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblContact" EntityType="Self.TblContact" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblDepartment" EntityType="Self.TblDepartment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblEmployee" EntityType="Self.TblEmployee" Schema="dbo" store:Type="Tables" />
@@ -145,6 +228,7 @@
           <EntitySet Name="TblResume" EntityType="Self.TblResume" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblService" EntityType="Self.TblService" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblSkill" EntityType="Self.TblSkill" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblVideoPopUp" EntityType="Self.TblVideoPopUp" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_TblEmployee_TblDepartment" Association="Self.FK_TblEmployee_TblDepartment">
             <End Role="TblDepartment" EntitySet="TblDepartment" />
             <End Role="TblEmployee" EntitySet="TblEmployee" />
@@ -193,6 +277,12 @@
           </AssociationSet>
           <EntitySet Name="TblAbouts" EntityType="CasgemPortfolioModel.TblAbout" />
           <EntitySet Name="TblContacts" EntityType="CasgemPortfolioModel.TblContact" />
+          <EntitySet Name="TblVideoPopUps" EntityType="CasgemPortfolioModel.TblVideoPopUp" />
+          <EntitySet Name="TblAboutDetails" EntityType="CasgemPortfolioModel.TblAboutDetail" />
+          <EntitySet Name="TblAchievements" EntityType="CasgemPortfolioModel.TblAchievement" />
+          <EntitySet Name="TblAboutDetailSeconds" EntityType="CasgemPortfolioModel.TblAboutDetailSecond" />
+          <EntitySet Name="TblAchievementDetails" EntityType="CasgemPortfolioModel.TblAchievementDetail" />
+          <EntitySet Name="TblAdmins" EntityType="CasgemPortfolioModel.TblAdmin" />
         </EntityContainer>
         <EntityType Name="TblMessage">
           <Key>
@@ -221,7 +311,6 @@
           <Property Name="ProjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ProjectTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="ProjectDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="ProjectImageUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Name="ProjectLink" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="TblSkill">
@@ -301,6 +390,85 @@
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Location" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="TblVideoPopUp">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="VideoUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="VideoImageUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblAboutDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SmallTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ImageUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="GithubUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="InstagramUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="LinkedinUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CvUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblAchievement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Achievement1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Achievement2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Achievement3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Achievement4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblAboutDetailSecond">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SmallTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Skill1Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Skill1Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Skill2Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Skill2Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Skill3Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Skill3Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblAchievementDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SmallTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Skill1Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Skill1Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Skill2Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Skill2Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Skill3Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Skill3Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Skill4Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Skill4Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblAdmin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -357,7 +525,6 @@
             <EntityTypeMapping TypeName="CasgemPortfolioModel.TblProject">
               <MappingFragment StoreEntitySet="TblProject">
                 <ScalarProperty Name="ProjectLink" ColumnName="ProjectLink" />
-                <ScalarProperty Name="ProjectImageUrl" ColumnName="ProjectImageUrl" />
                 <ScalarProperty Name="ProjectDescription" ColumnName="ProjectDescription" />
                 <ScalarProperty Name="ProjectTitle" ColumnName="ProjectTitle" />
                 <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
@@ -431,6 +598,91 @@
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
                 <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblVideoPopUps">
+            <EntityTypeMapping TypeName="CasgemPortfolioModel.TblVideoPopUp">
+              <MappingFragment StoreEntitySet="TblVideoPopUp">
+                <ScalarProperty Name="VideoImageUrl" ColumnName="VideoImageUrl" />
+                <ScalarProperty Name="VideoUrl" ColumnName="VideoUrl" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblAboutDetails">
+            <EntityTypeMapping TypeName="CasgemPortfolioModel.TblAboutDetail">
+              <MappingFragment StoreEntitySet="TblAboutDetail">
+                <ScalarProperty Name="CvUrl" ColumnName="CvUrl" />
+                <ScalarProperty Name="LinkedinUrl" ColumnName="LinkedinUrl" />
+                <ScalarProperty Name="InstagramUrl" ColumnName="InstagramUrl" />
+                <ScalarProperty Name="GithubUrl" ColumnName="GithubUrl" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SmallTitle" ColumnName="SmallTitle" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblAchievements">
+            <EntityTypeMapping TypeName="CasgemPortfolioModel.TblAchievement">
+              <MappingFragment StoreEntitySet="TblAchievement">
+                <ScalarProperty Name="Achievement4" ColumnName="Achievement4" />
+                <ScalarProperty Name="Achievement3" ColumnName="Achievement3" />
+                <ScalarProperty Name="Achievement2" ColumnName="Achievement2" />
+                <ScalarProperty Name="Achievement1" ColumnName="Achievement1" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblAboutDetailSeconds">
+            <EntityTypeMapping TypeName="CasgemPortfolioModel.TblAboutDetailSecond">
+              <MappingFragment StoreEntitySet="TblAboutDetailSecond">
+                <ScalarProperty Name="Skill3Description" ColumnName="Skill3Description" />
+                <ScalarProperty Name="Skill3Title" ColumnName="Skill3Title" />
+                <ScalarProperty Name="Skill2Description" ColumnName="Skill2Description" />
+                <ScalarProperty Name="Skill2Title" ColumnName="Skill2Title" />
+                <ScalarProperty Name="Skill1Description" ColumnName="Skill1Description" />
+                <ScalarProperty Name="Skill1Title" ColumnName="Skill1Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SmallTitle" ColumnName="SmallTitle" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblAchievementDetails">
+            <EntityTypeMapping TypeName="CasgemPortfolioModel.TblAchievementDetail">
+              <MappingFragment StoreEntitySet="TblAchievementDetail">
+                <ScalarProperty Name="Skill4Description" ColumnName="Skill4Description" />
+                <ScalarProperty Name="Skill4Title" ColumnName="Skill4Title" />
+                <ScalarProperty Name="Skill3Description" ColumnName="Skill3Description" />
+                <ScalarProperty Name="Skill3Title" ColumnName="Skill3Title" />
+                <ScalarProperty Name="Skill2Description" ColumnName="Skill2Description" />
+                <ScalarProperty Name="Skill2Title" ColumnName="Skill2Title" />
+                <ScalarProperty Name="Skill1Description" ColumnName="Skill1Description" />
+                <ScalarProperty Name="Skill1Title" ColumnName="Skill1Title" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SmallTitle" ColumnName="SmallTitle" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblAdmins">
+            <EntityTypeMapping TypeName="CasgemPortfolioModel.TblAdmin">
+              <MappingFragment StoreEntitySet="TblAdmin">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

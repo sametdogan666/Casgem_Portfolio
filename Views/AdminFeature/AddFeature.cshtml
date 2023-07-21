@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "AddFeature";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Yeni Öne Çıkan İçerik Ekleme Sayfası</h2>
+
+<form method="post">
+    <label>İçerik Başlığı</label>
+    <input type="text" class="form-control" name="FeatureTitle" />
+    <br />
+    <label>İçerik Açıklaması</label>
+    <input type="text" class="form-control" name="FeatureDescription" />
+    <br />
+    <label>Proje Açıklaması</label>
+    <input type="text" class="form-control" name="FeatureImageURL" />
+    <br />
+    <label>Öne Çıkan Yetenek - 1</label>
+    <input type="text" class="form-control" name="FeatureSkill1" />
+    <br />
+    <label>Öne Çıkan Yetenek - 2</label>
+    <input type="text" class="form-control" name="FeatureSkill2" />
+    <br />
+    <label>Öne Çıkan Yetenek - 3</label>
+    <input type="text" class="form-control" name="FeatureSkill3" />
+    <br />
+    <button class="btn btn-info">Öne Çıkan İçeriği Ekle</button>
+</form>
+
+

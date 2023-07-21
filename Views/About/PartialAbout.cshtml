@@ -1,0 +1,52 @@
+﻿@model List<Casgem_Portfolio.Models.Entities.TblAboutDetail>
+
+<section class="w3l-aboutblock1" id="about">
+    <div class="midd-w3 py-5">
+        <div class="container py-lg-5 py-md-3">
+            <div class="row">
+                @foreach (var item in ViewBag.Detail)
+                {
+                    <div class="col-lg-4">
+                        <div class="position-relative">
+                            <img src="@item.ImageUrl" alt="" class="radius-image img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-8 mt-lg-0 mt-5">
+                        <h5 class="title-small mb-2">@item.SmallTitle</h5>
+                        <h3 class="title-big">@item.Title</h3>
+                        <p class="mt-4">
+                            @item.Description
+                        </p>
+                        <div class="my-info mt-4">
+                            <div class="single-info">
+                                <span>Adım:</span>
+                                <p>@item.Name</p>
+                            </div>
+                            <div class="single-info">
+                                <span>Yaş:</span>
+                                <p>@item.Age</p>
+                            </div>
+                            <div class="single-info">
+                                <span>Yaşadığım Şehir:</span>
+                                <p>@item.City</p>
+                            </div>
+                            <div class="single-info">
+                                <span>Email:</span>
+                                <p><a href="mailto:@item.Email">@item.Email</a></p>
+                            </div>
+                        </div>
+                        <div class="my-social mt-lg-5 mt-4">
+                            <a href="@item.CvUrl" download="CV" class="btn btn-style btn-primary mt-lg-5 mt-4">Cv'mi İndir</a>
+                            <ul class="social m-0 p-0">
+                                <li><a href="@item.GithubUrl"><span class="fa fa-github"></span></a></li>
+                                <li><a href="@item.InstagramUrl"><span class="fa fa-instagram"></span></a></li>
+                                <li><a href="@item.LinkedinUrl"><span class="fa fa-linkedin-square"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</section>

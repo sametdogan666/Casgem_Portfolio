@@ -16,15 +16,12 @@
     <label>Proje Açıklaması</label>
     @Html.TextBoxFor(project => project.ProjectDescription, new { @class = "form-control" })
     <br />
-    <label>Proje Resim Yolu</label>
-    @Html.TextBoxFor(project => project.ProjectImageUrl, new { @class = "form-control" })
-    <br />
     <label>Proje Linki</label>
     @Html.TextBoxFor(project => project.ProjectLink, new { @class = "form-control" })
     <br />
 
     <button class="btn btn-success">Verileri Güncelle</button>
-    <a href="/Project/" class="btn btn-warning">Değişikliklerden Vazgeç</a>
+    <a href="/AdminProject/Index/" class="btn btn-warning">Değişikliklerden Vazgeç</a>
 </form>
 
 

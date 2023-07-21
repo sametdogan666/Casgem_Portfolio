@@ -1,0 +1,36 @@
+﻿@model Casgem_Portfolio.Models.Entities.TblFeature
+
+@{
+    ViewBag.Title = "UpdateFeature";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Öne Çıkan İçerik Güncelleme Sayfası</h2>
+
+<form method="post">
+    @Html.HiddenFor(project => project.FeatureID)
+
+    <label>İçerik Başlığı</label>
+    @Html.TextBoxFor(project => project.FeatureTitle, new { @class = "form-control" })
+    <br />
+    <label>İçerik Açıklaması</label>
+    @Html.TextBoxFor(project => project.FeatureDescription, new { @class = "form-control" })
+    <br />
+    <label>Fotoğraf Linki</label>
+    @Html.TextBoxFor(project => project.FeatureImageURL, new { @class = "form-control" })
+    <br />
+    <label>Öne Çıkan Yetenek - 1</label>
+    @Html.TextBoxFor(project => project.FeatureSkill1, new { @class = "form-control" })
+    <br />
+    <label>Öne Çıkan Yetenek - 2</label>
+    @Html.TextBoxFor(project => project.FeatureSkill2, new { @class = "form-control" })
+    <br />
+    <label>Öne Çıkan Yetenek - 3</label>
+    @Html.TextBoxFor(project => project.FeatureSkill3, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-success">Verileri Güncelle</button>
+    <a href="/AdminFeature/Index/" class="btn btn-warning">Değişikliklerden Vazgeç</a>
+</form>
+
+

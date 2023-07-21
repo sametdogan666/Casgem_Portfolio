@@ -1,0 +1,57 @@
+﻿@model List<Casgem_Portfolio.Models.Entities.TblAboutDetail>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+    int count = 0;
+}
+
+<h2>Hakkımda Detay Sayfası</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Küçük Başlık</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+        <th>Ad Soyad</th>
+        <th>Yaş</th>
+        <th>Şehir</th>
+        <th>Email</th>
+        <th>Resim Yolu</th>
+        <th>Github Linki</th>
+        <th>İnstagram Linki</th>
+        <th>Linkedin Linki</th>
+        <th>CV Linki</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>@item.SmallTitle</td>
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+            <td>@item.Name</td>
+            <td>@item.Age</td>
+            <td>@item.City</td>
+            <td>@item.Email</td>
+            <td>@item.ImageUrl</td>
+            <td>@item.GithubUrl</td>
+            <td>@item.InstagramUrl</td>
+            <td>@item.LinkedinUrl</td>
+            <td>@item.CvUrl</td>
+            <td><a href="/AdminAboutPageAbout/DeleteAbout/@item.Id" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/AdminAboutPageAbout/UpdateAbout/@item.Id" class="btn btn-outline-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+@if (ViewBag.countAbout == 0)
+{
+    <a href="/AdminAboutPageAbout/AddAbout" class="btn btn-outline-primary">Yeni Öne Çıkan İçerik Ekle</a>
+}
+
+
+

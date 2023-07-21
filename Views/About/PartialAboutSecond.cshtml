@@ -1,0 +1,55 @@
+﻿@model List<Casgem_Portfolio.Models.Entities.TblAboutDetailSecond>
+
+<div class="py-5 w3l-resume">
+    @foreach(var item in Model){
+        <div class="container py-lg-5 py-3">
+            <h5 class="title-small mb-2">@item.SmallTitle</h5>
+            <h3 class="title-big mb-4">@item.Title</h3>
+            <p>
+               @item.Description
+            </p>
+            <div class="row features-w3pvt-main mt-5 pt-md-3" id="features">
+                <div class="col-lg-4 col-md-6 feature-gird">
+                    <div class="row features-hny-inner-gd">
+                        <div class="col-md-2 col-2 featured_grid_left">
+                            <div class="icon_left_grid">
+                                <span class="fa fa-laptop" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-10 featured_grid_right_info">
+                            <h4>@item.Skill1Title</h4>
+                            <p>@item.Skill1Description</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 feature-gird mt-md-0 mt-4">
+                    <div class="row features-hny-inner-gd">
+                        <div class="col-md-2 col-2 featured_grid_left">
+                            <div class="icon_left_grid">
+                                <span class="fa fa-laptop" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-10 featured_grid_right_info">
+                            <h4>@item.Skill2Title</h4>
+                            <p>@item.Skill2Description</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 feature-gird mt-lg-0 mt-md-5 mt-4">
+                    <div class="row features-hny-inner-gd">
+                        <div class="col-md-2 col-2 featured_grid_left">
+                            <div class="icon_left_grid">
+                                <span class="fa fa-desktop" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-10 featured_grid_right_info">
+                            <h4>@item.Skill3Title</h4>
+                            <p>@item.Skill3Description</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    }
+</div>
