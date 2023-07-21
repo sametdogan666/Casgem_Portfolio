@@ -312,6 +312,7 @@
     <Content Include="Templates\sidebar-01\css\bootstrap\utilities\_stretched-link.css" />
     <Content Include="Templates\sidebar-01\css\bootstrap\_media.css" />
     <Content Include="Templates\sidebar-01\css\style.css" />
+    <Content Include="Templates\sidebar-01\images\admin.jpg" />
     <Content Include="Templates\sidebar-01\images\logo.jpg" />
     <Content Include="Templates\sidebar-01\index.html" />
     <Content Include="Templates\sidebar-01\js\bootstrap.min.js" />
