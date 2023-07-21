@@ -5,6 +5,7 @@ using Casgem_Portfolio.Models.Entities;
 
 namespace Casgem_Portfolio.Controllers
 {
+    [AllowAnonymous]
     public class ContactController : Controller
     {
         private readonly CasgemPortfolioEntities1 _db = new CasgemPortfolioEntities1();

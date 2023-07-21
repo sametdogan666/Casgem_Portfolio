@@ -1,0 +1,43 @@
+﻿@model List<Casgem_Portfolio.Models.Entities.TblAchievement>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+    int count = 0;
+}
+
+<h2>Başarılar Sayfası</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+        <th>Başarı 1</th>
+        <th>Başarı 2</th>
+        <th>Başarı 3</th>
+        <th>Başarı 4</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+            <td>@item.Achievement1</td>
+            <td>@item.Achievement2</td>
+            <td>@item.Achievement3</td>
+            <td>@item.Achievement4</td>
+            <td><a href="/AdminAboutPageAchievement/DeleteAchievement/@item.Id" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/AdminAboutPageAchievement/UpdateAchievement/@item.Id" class="btn btn-outline-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+@if (ViewBag.countAbout == 0)
+{
+    <a href="/AdminAboutPageAchievement/AddAchievement" class="btn btn-outline-primary">Yeni Başarı Ekle</a>
+}
+

@@ -5,6 +5,7 @@ using System.Web.Security;
 
 namespace Casgem_Portfolio.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         private readonly CasgemPortfolioEntities1 _db = new CasgemPortfolioEntities1();

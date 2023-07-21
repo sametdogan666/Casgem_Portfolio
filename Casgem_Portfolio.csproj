@@ -129,6 +129,9 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminAboutController.cs" />
     <Compile Include="Controllers\AdminAboutPageAboutController.cs" />
+    <Compile Include="Controllers\AdminAboutPageAboutSecondPartController.cs" />
+    <Compile Include="Controllers\AdminAboutPageAchievementController.cs" />
+    <Compile Include="Controllers\AdminAboutPageAchievementDetailController.cs" />
     <Compile Include="Controllers\AdminContactController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\AdminFeatureController.cs" />
@@ -481,6 +484,15 @@
     <Content Include="Views\AdminAboutPageAbout\Index.cshtml" />
     <Content Include="Views\AdminAboutPageAbout\AddAbout.cshtml" />
     <Content Include="Views\AdminAboutPageAbout\UpdateAbout.cshtml" />
+    <Content Include="Views\AdminAboutPageAboutSecondPart\Index.cshtml" />
+    <Content Include="Views\AdminAboutPageAboutSecondPart\AddAbout.cshtml" />
+    <Content Include="Views\AdminAboutPageAboutSecondPart\UpdateAbout.cshtml" />
+    <Content Include="Views\AdminAboutPageAchievement\Index.cshtml" />
+    <Content Include="Views\AdminAboutPageAchievement\AddAchievement.cshtml" />
+    <Content Include="Views\AdminAboutPageAchievement\UpdateAchievement.cshtml" />
+    <Content Include="Views\AdminAboutPageAchievementDetail\Index.cshtml" />
+    <Content Include="Views\AdminAboutPageAchievementDetail\AddAchievement.cshtml" />
+    <Content Include="Views\AdminAboutPageAchievementDetail\UpdateAchievement.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

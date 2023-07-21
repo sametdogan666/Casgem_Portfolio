@@ -1,0 +1,49 @@
+﻿@model Casgem_Portfolio.Models.Entities.TblAchievementDetail
+
+@{
+    ViewBag.Title = "UpdateAchievement";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Başarı Detay Güncelleme Sayfası</h2>
+
+<form method="post">
+    @Html.HiddenFor(achievement => achievement.Id)
+
+    <label>Küçük Başlık</label>
+    @Html.TextBoxFor(achievement => achievement.SmallTitle, new { @class = "form-control" })
+    <br />
+    <label>Başlık</label>
+    @Html.TextBoxFor(achievement => achievement.Title, new { @class = "form-control" })
+    <br />
+    <label>Başarı 1 Başlık</label>
+    @Html.TextBoxFor(achievement => achievement.Skill1Title, new { @class = "form-control" })
+    <br />
+    <label>Başarı 1 Açıklama</label>
+    @Html.TextBoxFor(achievement => achievement.Skill1Description, new { @class = "form-control" })
+    <br />
+    <label>Başarı 2 Başlık</label>
+    @Html.TextBoxFor(achievement => achievement.Skill2Title, new { @class = "form-control" })
+    <br />
+    <label>Başarı 2 Açıklama</label>
+    @Html.TextBoxFor(achievement => achievement.Skill2Description, new { @class = "form-control" })
+    <br />
+    <label>Başarı 3 Başlık</label>
+    @Html.TextBoxFor(achievement => achievement.Skill3Title, new { @class = "form-control" })
+    <br />
+    <label>Başarı 3 Açıklama</label>
+    @Html.TextBoxFor(achievement => achievement.Skill3Description, new { @class = "form-control" })
+    <br />
+    <label>Başarı 4 Başlık</label>
+    @Html.TextBoxFor(achievement => achievement.Skill4Title, new { @class = "form-control" })
+    <br />
+    <label>Başarı 4 Açıklama</label>
+    @Html.TextBoxFor(achievement => achievement.Skill4Description, new { @class = "form-control" })
+    <br />
+
+
+    <button class="btn btn-success">Verileri Güncelle</button>
+    <a href="/AdminAboutPageAchievementDetail/Index/" class="btn btn-warning">Değişikliklerden Vazgeç</a>
+</form>
+
+

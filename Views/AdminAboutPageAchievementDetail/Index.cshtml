@@ -1,0 +1,54 @@
+﻿@model List<Casgem_Portfolio.Models.Entities.TblAchievementDetail>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+    int count = 0;
+}
+
+<h2>Başarılar Detay Sayfası</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Küçük Başlık</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+        <th>Başarı 1 Başlık</th>
+        <th>Başarı 1 Açıklama</th>
+        <th>Başarı 2 Başlık</th>
+        <th>Başarı 2 Açıklama</th>
+        <th>Başarı 3 Başlık</th>
+        <th>Başarı 3 Açıklama</th>
+        <th>Başarı 4 Başlık</th>
+        <th>Başarı 4 Açıklama</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>@item.SmallTitle</td>
+            <td>@item.Title</td>
+            <td>@item.Skill1Title</td>
+            <td>@item.Skill1Description</td>
+            <td>@item.Skill2Title</td>
+            <td>@item.Skill2Description</td>
+            <td>@item.Skill3Title</td>
+            <td>@item.Skill3Description</td>
+            <td>@item.Skill4Title</td>
+            <td>@item.Skill4Description</td>
+            <td><a href="/AdminAboutPageAchievementDetail/DeleteAchievement/@item.Id" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/AdminAboutPageAchievementDetail/UpdateAchievement/@item.Id" class="btn btn-outline-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+@if (ViewBag.countAbout == 0)
+{
+    <a href="/AdminAboutPageAchievementDetail/AddAchievement" class="btn btn-outline-primary">Yeni Başarı Detayı Ekle</a>
+}
+
+
+

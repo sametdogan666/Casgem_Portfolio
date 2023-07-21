@@ -5,6 +5,7 @@ using System.Web.Mvc;
 
 namespace Casgem_Portfolio.Controllers
 {
+    [AllowAnonymous]
     public class AboutController : Controller
     {
         private readonly CasgemPortfolioEntities1 _db = new CasgemPortfolioEntities1();

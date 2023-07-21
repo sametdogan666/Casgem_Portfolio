@@ -1,0 +1,46 @@
+﻿@model Casgem_Portfolio.Models.Entities.TblAboutDetailSecond
+
+@{
+    ViewBag.Title = "UpdateAbout";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Hakkımda İkinci Bölüm Güncelleme Sayfası</h2>
+
+<form method="post">
+    @Html.HiddenFor(project => project.Id)
+
+    <label>Küçük Başlık</label>
+    @Html.TextBoxFor(project => project.SmallTitle, new { @class = "form-control" })
+    <br />
+    <label>Başlık</label>
+    @Html.TextBoxFor(project => project.Title, new { @class = "form-control" })
+    <br />
+    <label>Açıklama</label>
+    @Html.TextBoxFor(project => project.Description, new { @class = "form-control" })
+    <br />
+    <label>Yetenek 1 Başlık</label>
+    @Html.TextBoxFor(project => project.Skill1Title, new { @class = "form-control" })
+    <br />
+    <label>Yetenek 1 Açıklama</label>
+    @Html.TextBoxFor(project => project.Skill1Description, new { @class = "form-control" })
+    <br />
+    <label>Yetenek 2 Başlık</label>
+    @Html.TextBoxFor(project => project.Skill2Title, new { @class = "form-control" })
+    <br />
+    <label>Yetenek 2 Açıklama</label>
+    @Html.TextBoxFor(project => project.Skill2Description, new { @class = "form-control" })
+    <br />
+    <label>Yetenek 3 Başlık</label>
+    @Html.TextBoxFor(project => project.Skill3Title, new { @class = "form-control" })
+    <br />
+    <label>Yetenek 3 Açıklama</label>
+    @Html.TextBoxFor(project => project.Skill3Description, new { @class = "form-control" })
+    <br />
+    
+
+    <button class="btn btn-success">Verileri Güncelle</button>
+    <a href="/AdminAboutPageAboutSecondPart//Index/" class="btn btn-warning">Değişikliklerden Vazgeç</a>
+</form>
+
+
