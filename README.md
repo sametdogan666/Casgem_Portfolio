@@ -1,5 +1,17 @@
-# Portfolio Project
 
-In this solution, a Portfolio site has been developed with .Net Framework. Hope it will be a useful resource for those who are interested.
+# PORTFOLIO PROJESI
 
-Give a Star! ⭐ Please give a star if you liked this project, learned something or use it in your apps. Thanks!
+Kendime ait yetenek, eğitim hayatım, hakkımda, iletişim bilgilerim gibi alanların yer aldığı admin paneli üzerinden değişikliklerin yapılabildiği dinamik bir web projesi.
+
+
+## Features
+
+- Asp.Net Mvc5
+- MSSQL
+- EntityFramework Code First
+- Html
+- Css
+- Bootstrap
+- JavaScript
+
+
